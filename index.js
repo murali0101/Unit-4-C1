@@ -7,7 +7,7 @@ function logger(req, res, next) {
 }
 function checkPermission(val) {
   return function (req, res, next) {
-    if ((req.path = `\${val}`)) {
+    if ((req.path = `/${val}`)) {
       req.bag = { route: req.path, permission: true };
       next();
     }
